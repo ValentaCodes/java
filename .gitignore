@@ -3,6 +3,7 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 .idea/
+
 ### Eclipse ###
 .apt_generated
 .classpath
@@ -14,6 +15,37 @@ out/
 bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
+
+# Bytecode files
+*.class
+
+# Package Files
+*.jar
+*.war
+*.ear
+
+# IDE files (e.g., IntelliJ, Eclipse)
+*.iml
+.idea/
+*.project
+.classpath
+.settings/
+
+# Logs and system files
+*.log
+*.DS_Store
+*.vscode/
+*.swp
+
+# Maven and Gradle build directories
+target/
+out/
+build/
+
+# Dependency caches
+**/node_modules/
+.gradle/
+.mvn/
 
 ### NetBeans ###
 /nbproject/private/
