@@ -3,7 +3,7 @@ public class MethodOverload {
         convertToCentimeters(5, 8);
     }
     // I created this class to practice Method Overloading.
-    
+
     // NOTE: We can have two methods with the same name as long as the method signatures are different.
 
     public static double convertToCentimeters(int inches) {
