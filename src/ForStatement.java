@@ -1,15 +1,12 @@
 public class ForStatement {
     public static void main(String[] args) {
-//        For loop practice 
+//        For loop practice
         int counter = 0;
-        for (int number = 10; number <= 50; number++) {
+        for (int i = 10; counter < 3 && i <= 50; i++) {
 
-            if (isPrime(number)) {
-                System.out.println(number + " is " + isPrime(number) + " a prime number.");
+            if (isPrime(i)) {
+                System.out.println(i + " is " + isPrime(i) + " a prime number.");
                 counter++;
-                if (counter == 3) {
-                    break;
-                }
             }
 
         }
