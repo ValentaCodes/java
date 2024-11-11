@@ -5,7 +5,7 @@ public class ChallengeOperator {
         double multiDouble = (myDouble + doubleDouble ) * 100.00d;
         double remainder = multiDouble % 40.00d;
 
-        boolean isNoRemainder = (remainder == 0) ? true : false;
+        boolean isNoRemainder = remainder == 0;
 
         if (!isNoRemainder) {
             System.out.println("Got some remainder");
