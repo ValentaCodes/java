@@ -1,6 +1,6 @@
 public class MethodOverload {
     public static void main(String[] args) {
-        convertToCentimeters(5, 8);
+        System.out.println(convertToCentimeters(8));
     }
     // I created this class to practice Method Overloading.
 
