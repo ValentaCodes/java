@@ -1,3 +1,5 @@
+package Unidentified;
+
 public class FirstLastDigitSum {
     public static void main(String[] args) {
         System.out.println(firstLastDigitSum(0));
