@@ -18,14 +18,26 @@ public class SmartKitchen {
         fridge = new Refrigerator();
     }
 
+    /**
+     * Getter method for coffee maker instance
+     * @return boolean
+     */
     public CoffeeMaker getCoffeeMaker() {
         return coffeeMaker;
     }
 
+    /**
+     * getter method for dishwasher
+     * @return boolean
+     */
     public Dishwasher getWasher() {
         return washer;
     }
 
+    /**
+     * getter method for fridge
+     * @return boolean
+     */
     public Refrigerator getFridge() {
         return fridge;
     }
@@ -42,12 +54,4 @@ public class SmartKitchen {
         fridge.setHasWorkToDo(fridgeFlag);
     }
 
-    /**
-     * Delegate and assign kitchen work for an appliance
-     */
-    public void doKitchenWork() {
-        coffeeMaker.brewCoffee();
-        washer.doDishes();
-        fridge.orderFood();
-    }
 }
