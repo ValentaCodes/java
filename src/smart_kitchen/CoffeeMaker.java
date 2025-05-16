@@ -7,10 +7,16 @@ package smart_kitchen;
  */
 public class CoffeeMaker {
     private boolean hasWorkToDo;
-    private int timeLeft;
 
-    public CoffeeMaker(){}
+    public CoffeeMaker(){
+    }
 
+    /**
+     * Adding water will set hasWorkToDo to true
+     */
+    public void addWater(){
+        hasWorkToDo = true;
+    }
     /**
      * Starts to brew coffee if work to do flag is true
      * @param hasWorkToDo - boolean

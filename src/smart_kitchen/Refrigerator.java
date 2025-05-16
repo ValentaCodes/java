@@ -12,10 +12,17 @@ public class Refrigerator {
     }
 
     /**
+     * Pouring milk will set hasWorkToDo to true.
+     */
+    public void pourMilk(){
+        hasWorkToDo = true;
+    }
+
+    /**
      * Start dishes if work is needed.
      * @param hasWorkToDo - boolean
      */
-    public void doDishes(boolean hasWorkToDo){
+    public void orderFood(boolean hasWorkToDo){
         if (hasWorkToDo)
             System.out.println("Starting dishes");
     }
