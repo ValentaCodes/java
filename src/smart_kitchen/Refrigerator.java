@@ -8,7 +8,14 @@ package smart_kitchen;
 public class Refrigerator {
     private boolean hasWorkToDo;
 
-    public Refrigerator(){
+    public Refrigerator(){}
+
+    /**
+     * Setter method
+     * @param hasWorkToDo - boolean
+     */
+    public void setHasWorkToDo(boolean hasWorkToDo){
+        this.hasWorkToDo = hasWorkToDo;
     }
 
     /**
@@ -20,10 +27,12 @@ public class Refrigerator {
 
     /**
      * Start dishes if work is needed.
-     * @param hasWorkToDo - boolean
      */
-    public void orderFood(boolean hasWorkToDo){
-        if (hasWorkToDo)
+    public void orderFood(){
+        if (hasWorkToDo) {
             System.out.println("Starting dishes");
+            hasWorkToDo = false;
+        }
     }
+
 }
