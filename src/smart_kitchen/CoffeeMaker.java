@@ -8,7 +8,14 @@ package smart_kitchen;
 public class CoffeeMaker {
     private boolean hasWorkToDo;
 
-    public CoffeeMaker(){
+    public CoffeeMaker(){}
+
+    /**
+     * Setter method
+     * @param hasWorkToDo - boolean
+     */
+    public void setHasWorkToDo(boolean hasWorkToDo){
+        this.hasWorkToDo = hasWorkToDo;
     }
 
     /**
@@ -17,13 +24,14 @@ public class CoffeeMaker {
     public void addWater(){
         hasWorkToDo = true;
     }
+
     /**
      * Starts to brew coffee if work to do flag is true
-     * @param hasWorkToDo - boolean
      */
-    public void brewCoffee(boolean hasWorkToDo){
+    public void brewCoffee(){
         if (hasWorkToDo) {
             System.out.println("Your coffee is being brewed.");
+            hasWorkToDo = false;
         }
     }
 }

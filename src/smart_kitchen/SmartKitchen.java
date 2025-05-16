@@ -8,31 +8,50 @@ package smart_kitchen;
  * @version 0.0.1
  */
 public class SmartKitchen {
-    CoffeeMaker coffeeMaker = new CoffeeMaker();
-    Dishwasher washer = new Dishwasher();
-    Refrigerator fridge = new Refrigerator();
+    private final CoffeeMaker coffeeMaker;
+    private final Dishwasher washer;
+    private final Refrigerator fridge;
 
     public SmartKitchen() {
+        coffeeMaker = new CoffeeMaker();
+        washer = new Dishwasher();
+        fridge = new Refrigerator();
     }
 
     /**
-     * Delegate and assign kitchen work for an appliance
+     * Getter method for coffee maker instance
+     * @return boolean
      */
-    public void doKitchenWork() {
-        coffeeMaker.addWater();
-        washer.loadDishwasher();
-        fridge.pourMilk();
+    public CoffeeMaker getCoffeeMaker() {
+        return coffeeMaker;
     }
 
     /**
-     * Override of toString method
+     * getter method for dishwasher
+     * @return boolean
      */
-    @Override
-    public String toString() {
-        return "SmartKitchen{" +
-                "coffeeMaker=" + coffeeMaker +
-                ", washer=" + washer +
-                ", fridge=" + fridge +
-                '}';
+    public Dishwasher getWasher() {
+        return washer;
     }
+
+    /**
+     * getter method for fridge
+     * @return boolean
+     */
+    public Refrigerator getFridge() {
+        return fridge;
+    }
+
+    /**
+     * Set the flags to either true or false to assign to flags.
+     * @param coffeeFlag boolean
+     * @param washerFlag boolean
+     * @param fridgeFlag boolean
+     */
+    public void setKitchenState(boolean coffeeFlag, boolean washerFlag, boolean fridgeFlag){
+        coffeeMaker.setHasWorkToDo(coffeeFlag);
+        washer.setHasWorkToDo(washerFlag);
+        fridge.setHasWorkToDo(fridgeFlag);
+    }
+
 }
