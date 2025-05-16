@@ -23,7 +23,6 @@ public class Dishwasher {
      */
     public void loadDishwasher(){
         hasWorkToDo = true;
-        setHasWorkToDo(hasWorkToDo);
     }
 
     /**
