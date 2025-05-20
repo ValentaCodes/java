@@ -11,29 +11,26 @@ public class Printer {
     private int pagesPrinted;
     private boolean duplex;
 
-    public Printer(boolean duplex){
-        this(100, 0, false);
+
+    public Printer(int tonerLevel, boolean duplex) {
+        this.pagesPrinted = 0;
+        this.tonerLevel = (tonerLevel >= 0 && tonerLevel <= 100) ? tonerLevel : 1;
+        this.duplex = duplex;
     }
 
-    public Printer(int tonerLevel, int pagesPrinted, boolean duplex) {
-            this.tonerLevel = tonerLevel;
-            this.pagesPrinted = pagesPrinted;
-            this.duplex = duplex;
-    }
-
-    public int addToner(int tonerAmount){
-        tonerLevel = tonerLevel + tonerAmount;
-        if (tonerLevel >= 100) {
-        System.out.println("Toner is at full capacity");
-            return tonerLevel = 100;
-        } else if (tonerLevel <=0) {
-            System.out.println("toner is empty... Please refill before using.");
-           return tonerLevel = -1;
-        } else {
-            System.out.println("Adding toner..." + " New toner level: " + tonerLevel);
-
-            return tonerLevel;
+    /**
+     * Adds toner to the printer.
+     *
+     * @param tonerAmount int
+     * @return int - current toner level
+     */
+    public int addToner(int tonerAmount) {
+        int tempAmount = tonerLevel + tonerAmount;
+        if (tempAmount > 100 || tempAmount < 0) {
+            return tonerLevel = -1;
         }
+        tonerLevel += tonerAmount;
+        return tonerLevel;
     }
 
     public int getTonerLevel() {
@@ -48,13 +45,9 @@ public class Printer {
         return duplex;
     }
 
-    public void printPages(int pages){
-        if (duplex) {
-            System.out.println("This is a duplex printer");
-            pagesPrinted = pagesPrinted + (int)(pages*.5);
-        }
-        pagesPrinted = pagesPrinted + pages;
-//        tonerLevel = tonerLevel - (int)(pages * .5);
-        System.out.println("Printing " + pages + " pages..." + "Total pages printed: " + pagesPrinted);
+    public int printPages(int pages) {
+       int jobPages = (duplex) ? (pages / 2) + (pages % 2) : pages;
+       pagesPrinted += jobPages;
+       return jobPages;
     }
 }
