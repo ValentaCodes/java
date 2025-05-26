@@ -21,7 +21,7 @@ public class NextMain {
 
         // This is one you can check the type of object at runtime, but it is not the most efficient way
         Object unknownGenre = Movie.getMovie("C", "Comedy");
-        if (unknownGenre.getClass().getSimpleName() == "Comedy") {
+        if (unknownGenre.getClass().getSimpleName().equals("Comedy")) {
             Comedy c = (Comedy) unknownGenre;
             c.watchComdey();
             // Below is a better way to check a type at runtime. Using "instanceOf"
