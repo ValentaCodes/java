@@ -9,12 +9,17 @@ public class CarMain {
                 ": ");
         String type = s.next();
         Object car = Car.getInstance(type);
+        s.close();
       if (car instanceof ElectricCar) {
+          ((ElectricCar) car).getDescription();
+          ((ElectricCar) car).startEngine();
           ((ElectricCar) car).drive();
       } else if (car instanceof HybridCar hy) {
+          hy.getDescription();
           hy.startEngine();
           hy.drive();
       } else if (car instanceof GasPoweredCar gas) {
+          gas.getDescription();
           gas.startEngine();
           gas.drive();
       }
