@@ -19,7 +19,11 @@ public class Car {
         };
     }
 
-    public static void runEngine() {
+    public void getDescription(){
+        System.out.println(this.description);
+    }
+
+    protected void runEngine() {
         System.out.println("Cannot run engine. No engine has been installed.");
     }
 
@@ -34,10 +38,10 @@ public class Car {
 
 class GasPoweredCar extends Car {
     private double avgKmPerLitre;
-    private int cylinders;
+    private int cylinders = 6;
 
-    public GasPoweredCar() {
-        super("Gas Vehicle");
+    public GasPoweredCar(String description) {
+        super(description);
     }
 
     public GasPoweredCar(String description, double avgKmPerLitre, int cylinders) {
@@ -57,6 +61,14 @@ class GasPoweredCar extends Car {
         super.drive();
         System.out.println("Vroom!");
     }
+
+    public int getCylinders(){
+        return cylinders;
+    }
+
+    public double getAvgKmPerLitre(){
+        return avgKmPerLitre;
+    }
 }
 
 class ElectricCar extends Car {
@@ -67,23 +79,30 @@ class ElectricCar extends Car {
         super(description);
     }
 
-    public ElectricCar(String description, double avgKmPerCharge, int batterySize) {
-        super("This is electric");
+    public ElectricCar(String description,double avgKmPerCharge, int batterySize) {
+        super(description);
         this.avgKmPerCharge = avgKmPerCharge;
         this.batterySize = batterySize;
     }
 
     @Override
     public void drive() {
-        super.drive();
-        System.out.println("Phhewwww");
+        System.out.println("Driving your electric vehicle.");
     }
 
     @Override
     public void startEngine() {
-        super.startEngine();
-        System.out.println("Welcome to your electric vehicle.");
+        System.out.println("Starting engine on your ev.");
     }
+
+    public double getAvgKmPerCharge(){
+        return avgKmPerCharge;
+    }
+
+    public int getBatterySize(){
+        return batterySize;
+    }
+
 }
 
 class HybridCar extends Car {
@@ -92,7 +111,7 @@ class HybridCar extends Car {
     private int cylinders;
 
     public HybridCar(String description) {
-        super("Hybrid Vehicle");
+        super(description);
     }
 
     public HybridCar(String description, double avgKmPerLitre, int batterySize, int cylinders) {
@@ -105,12 +124,11 @@ class HybridCar extends Car {
 
     @Override
     public void startEngine() {
-        super.startEngine();
-        System.out.println();
+        System.out.println("Starting engine on hybrid car");
     }
 
     @Override
     public void drive() {
-        super.drive();
+        System.out.println("Hybrid car is driving");
     }
 }
