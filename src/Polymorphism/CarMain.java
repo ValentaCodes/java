@@ -8,21 +8,26 @@ public class CarMain {
         System.out.println("Choose a car type: (Enter E for a tesla), (Enter H for a Prius), or (Enter G for a chevy)" +
                 ": ");
         String type = s.next();
-        Object car = Car.getInstance(type);
+        var car = Car.getInstance(type);
         s.close();
-      if (car instanceof ElectricCar) {
-          ((ElectricCar) car).getDescription();
-          ((ElectricCar) car).startEngine();
-          ((ElectricCar) car).drive();
-      } else if (car instanceof HybridCar hy) {
-          hy.getDescription();
-          hy.startEngine();
-          hy.drive();
-      } else if (car instanceof GasPoweredCar gas) {
-          gas.getDescription();
-          gas.startEngine();
-          gas.drive();
-      }
-
+        switch (car) {
+            case ElectricCar ev -> {
+                ev.getDescription();
+                ev.startEngine();
+                ev.drive();
+            }
+            case HybridCar hy -> {
+                hy.getDescription();
+                hy.startEngine();
+                hy.drive();
+            }
+            case GasPoweredCar gas -> {
+                gas.getDescription();
+                gas.startEngine();
+                gas.drive();
+            }
+            default -> {
+            }
+        }
     }
 }
