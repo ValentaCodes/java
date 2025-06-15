@@ -2,9 +2,8 @@ package Restuarant;
 
 public class Main {
     public static void main(String[] args) {
-        MealOrder order1 = new MealOrder();
-        Hamburger cheeseBurger = new Hamburger(true);
-        System.out.println(cheeseBurger.getPrice());
-        System.out.println(order1);
+    MealOrder meal1 = new MealOrder();
+        meal1.hamburger.setHamburger("cheese");
+        System.out.println(meal1.hamburger.getType());
     }
 }
