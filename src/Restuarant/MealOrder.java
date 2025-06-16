@@ -14,11 +14,14 @@ public class MealOrder {
         this.sideItem = new SideItem();
     }
 
+//    public void getMeal(){
+//        System.out.println(hamburger.getType());
+//        System.out.println(sideItem.getType());
+//        System.out.println(drink.getType());
+//    }
 }
 
 class Hamburger {
-    String[] toppings = new String[]{"tomato", "lettuce", "onion"};
-    ArrayList<String> currentTopping = new ArrayList<>(3);
     private String type;
     private double price;
 
@@ -26,6 +29,10 @@ class Hamburger {
         this.price = 2.99;
         this.type = "plain";
     }
+
+//    public DeluxeBurger(){
+//
+//    }
 
     public void setHamburger(String type) {
         switch (type) {
@@ -57,31 +64,31 @@ class Hamburger {
 //        };
 //    }
 
-    public void addTopping() {
-        Scanner s = new Scanner(System.in);
-        System.out.println("Choose a topping: " + String.join(", ", toppings));
-        String topping = s.next();
-        s.close();
-        for (String top : toppings) {
-            if (currentTopping.size() >= 3) {
-                System.out.println("You have reached the maximum number of toppings for this burger");
-                break;
-            }
-            if (top.equals(topping)) {
-                this.price += 0.50;
-                currentTopping.add(topping);
-                System.out.println(topping + " has been added to the burger");
-            }
-        }
-    }
+//    public void addTopping() {
+//        Scanner s = new Scanner(System.in);
+//        System.out.println("Choose a topping: " + String.join(", ", toppings));
+//        String topping = s.next();
+//        s.close();
+//        for (String top : toppings) {
+//            if (currentTopping.size() >= 3) {
+//                System.out.println("You have reached the maximum number of toppings for this burger");
+//                break;
+//            }
+//            if (top.equals(topping)) {
+//                this.price += 0.50;
+//                currentTopping.add(topping);
+//                System.out.println(topping + " has been added to the burger");
+//            }
+//        }
+//    }
 
     public String getType() {
         return type;
     }
 
-    public ArrayList<String> getCurrentTopping() {
-        return currentTopping;
-    }
+//    public ArrayList<String> getCurrentTopping() {
+//        return currentTopping;
+//    }
 }
 
 class Drink {

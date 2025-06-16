@@ -3,17 +3,20 @@ package bankAccount;
 public class Account {
     private double balance;
     private long accountNum;
-    private String Fname;
-    private String Lname;
+    private String fName;
+    private String lName;
+    private String customerName;
 
-    public Account(String Fname, String Lname, long accountNum, double balance) {
-        this.Fname = Fname;
-        this.Lname = Lname;
+    public Account(String fName, String lName, long accountNum, double balance) {
+        this.fName = fName;
+        this.lName = lName;
         this.accountNum = accountNum;
         this.balance = balance;
+        customerName = fName + " "  + lName;
     }
 
     public Account() {
+
     }
 
     public double getBalance() {
@@ -32,20 +35,20 @@ public class Account {
         this.accountNum = accountNum;
     }
 
-    public String getFname() {
-        return Fname;
+    public String getfName() {
+        return fName;
     }
 
-    public void setFname(String fname) {
-        Fname = fname;
+    public void setfName(String fname) {
+        fName = fName;
     }
 
-    public String getLname() {
-        return Lname;
+    public String getlName() {
+        return lName;
     }
 
-    public void setLname(String lname) {
-        Lname = lname;
+    public void setlName(String lName) {
+        lName = lName;
     }
 
     public void withdrawal(int amount){
@@ -55,9 +58,7 @@ public class Account {
     @Override
     public String toString(){
         return "Account Information: { " +
-                this.Fname +
-                " " +
-                this.Lname +
+                customerName +
                 ", " +
                 this.accountNum +
                 ", " +
