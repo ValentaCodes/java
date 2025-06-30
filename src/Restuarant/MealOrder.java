@@ -148,5 +148,4 @@ class SideItem {
         this.type = "fries";
         this.price = 2.00;
     }
-
 }
