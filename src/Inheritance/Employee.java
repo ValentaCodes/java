@@ -9,11 +9,14 @@ public class Employee extends Worker {
     private long employeeId;
     private String hireDate;
 
+    //Remember a static field is a place where you can share data across all instances.
+    private static int employeeNo = 1;
+
     public Employee(){}
 
-    public Employee(String name, String birthdate, long employeeId, String hireDate){
+    public Employee(String name, String birthdate, String hireDate){
         super(name, birthdate);
-        this.employeeId = employeeId;
+        this.employeeId = Employee.employeeNo++;
         this.hireDate = hireDate;
     }
 
