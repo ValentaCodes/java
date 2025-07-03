@@ -6,19 +6,22 @@ package Inheritance;
  * This class object represents a salaried employee at a company
  */
 public class SalariedEmployee extends Employee {
-    private double annualSalary;
-    private boolean isRetired;
+    double annualSalary;
+    boolean isRetired;
 
-    public SalariedEmployee(String name, String birthdate, String hireDate){
+    public SalariedEmployee(String name, String birthdate, String hireDate, double annualSalary){
         super(name, birthdate, hireDate);
-    }
-    public SalariedEmployee(double annualSalary, boolean isRetired){
         this.annualSalary = annualSalary;
-        this.isRetired = isRetired;
     }
 
     public void retire(){
-        super.endDate = "2025";
-        System.out.println(endDate);
+        terminate("12/12/2025");
+        this.isRetired = true;
+    }
+
+    @Override
+    public double collectPay(){
+        double paycheck = annualSalary / 26;
+        return (isRetired) ? 0.9 * paycheck : paycheck;
     }
 }

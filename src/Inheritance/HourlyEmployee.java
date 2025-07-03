@@ -6,17 +6,19 @@ package Inheritance;
  * This class object represents an hourly employee for a company
  */
 public class HourlyEmployee extends Employee {
-    private final double hourlyPayRate;
+    private double hourlyPayRate;
 
-    public HourlyEmployee(){
-        this(40.00);
-    }
-
-    public HourlyEmployee(double hourlyPayRate){
+    public HourlyEmployee(String name, String birthdate, String hireDate, double hourlyPayRate) {
+        super(name, birthdate, hireDate);
         this.hourlyPayRate = hourlyPayRate;
     }
 
-    public void getDoublePay(){
-        System.out.println(hourlyPayRate * 2);
+    @Override
+    public double collectPay(){
+        return 40 * hourlyPayRate;
+    }
+
+    public double getDoublePay(){
+       return 2 * collectPay();
     }
 }
